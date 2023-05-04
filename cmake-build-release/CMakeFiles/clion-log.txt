@@ -1,0 +1,4 @@
+C:\Users\Dima\AppData\Local\JetBrains\CLion2022.2\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Release "-DCMAKE_MAKE_PROGRAM=/cygdrive/c/Program Files/JetBrains/CLion 2022.2.3/bin/ninja/cygwin/ninja.exe" -G Ninja -S "/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4" -B "/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/cmake-build-release"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/cmake-build-release

@@ -1,0 +1,14 @@
+# ninja log v5
+25	859	1682432300609266800	CMakeFiles/Lab4.dir/sources/entities/Student.cpp.o	585fe0a18a3840e0
+10	908	1683041723934093900	CMakeFiles/Lab4.dir/sources/main.cpp.o	a8c24d3bf3086171
+11	987	1683042023410291600	CMakeFiles/Lab4.dir/sources/data_structures/MapTrie.cpp.o	56eba7688f884b3b
+888	1134	1683042210113256100	Lab4.exe	7db4166e938d1276
+26	786	1683041039283179700	CMakeFiles/Lab4.dir/sources/data_structures/BinarySearchTree.cpp.o	54c0d9b1e814685c
+42	825	1683041039337700500	CMakeFiles/Lab4.dir/sources/data_structures/ArrayTrie.cpp.o	e89354b8334cb270
+36	931	1683045545301455900	CMakeFiles/Task2Trie.dir/sources/data_structures/BinarySearchTree.cpp.o	10a0111f622f0887
+10	880	1683042209859404800	CMakeFiles/Lab4.dir/sources/Task1BST.cpp.o	de8e119c792c7a4e
+20	868	1683045545239856700	CMakeFiles/Task2Trie.dir/sources/entities/Student.cpp.o	1a8ebaac5b55846f
+54	1042	1683045545418734600	CMakeFiles/Task2Trie.dir/sources/data_structures/ArrayTrie.cpp.o	6495fb8c492f9652
+40	2036	1683202102173774700	CMakeFiles/Task2Trie.dir/sources/data_structures/MapTrie.cpp.o	e72321d336bf281d
+19	2016	1683202102146775900	CMakeFiles/Task2Trie.dir/sources/Task2Trie.cpp.o	eb585de6b598362b
+2037	2458	1683202102593764300	Task2Trie.exe	b0cfdad0062846d3
