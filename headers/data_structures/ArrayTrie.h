@@ -24,9 +24,9 @@ private:
 public:
     ArrayTrie();
 
-    void insert(string key);
+    void insert(const string& key);
 
-    vector<string> findByPrefix(string prefix);
+    vector<string> findByPrefix(const string& prefix);
 
 private:
     void fillWordsVector(vector<string> &words, const Node *node, string &nextWord);

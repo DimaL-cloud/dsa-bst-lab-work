@@ -10,7 +10,7 @@ ArrayTrie::ArrayTrie() {
     root = new Node();
 }
 
-void ArrayTrie::insert(string key) {
+void ArrayTrie::insert(const string& key) {
     Node *currentNode = root;
 
     for (char c : key) {
@@ -26,7 +26,7 @@ void ArrayTrie::insert(string key) {
     currentNode->isWord = true;
 }
 
-vector<string> ArrayTrie::findByPrefix(string prefix) {
+vector<string> ArrayTrie::findByPrefix(const string& prefix) {
     vector<string> words;
 
     Node *currentNode = root;

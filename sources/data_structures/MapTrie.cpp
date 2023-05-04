@@ -4,7 +4,7 @@ MapTrie::MapTrie() {
     root = new Node();
 }
 
-void MapTrie::insert(string key) {
+void MapTrie::insert(const string& key) {
     Node *currentNode = root;
 
     for (char c: key) {
@@ -20,7 +20,7 @@ void MapTrie::insert(string key) {
     currentNode->isWord = true;
 }
 
-vector<string> MapTrie::findByPrefix(string prefix) {
+vector<string> MapTrie::findByPrefix(const string& prefix) {
     vector<string> words;
 
     Node *currentNode = root;
