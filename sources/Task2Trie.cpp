@@ -5,9 +5,12 @@
 #include "../headers/data_structures/ArrayTrie.h"
 #include "../headers/data_structures/MapTrie.h"
 
+#define WORDS_FILE_PATH "words_alpha.txt"
+#define SEARCH_ITERATIONS 500
+
 using namespace std;
 
-void openFile(ifstream &inputFile, string &codeFilePath) {
+void openFile(ifstream &inputFile, const string &codeFilePath) {
     try {
         inputFile.open(codeFilePath);
         if (!inputFile.is_open()) {
@@ -27,11 +30,11 @@ void printVector(const vector<string> &words) {
 }
 
 template<typename T>
-double measureTrieTime(T trie) {
+double measureTrieTime(T trie, const string &prefix) {
     clock_t startTime = clock();
 
-    for (int i = 0; i < 500; i++) {
-        trie.findByPrefix("a");
+    for (int i = 0; i < SEARCH_ITERATIONS; i++) {
+        trie.findByPrefix(prefix);
     }
 
     clock_t endTime = clock();
@@ -43,28 +46,33 @@ int main() {
     MapTrie mapTrie;
     ArrayTrie arrayTrie;
 
-    string codeFilePath = "words_alpha.txt";
     ifstream inputFile;
 
-    openFile(inputFile, codeFilePath);
+    openFile(inputFile, WORDS_FILE_PATH);
 
     string inputWord;
 
-    while (getline(inputFile, inputWord)) {
+    while (inputFile >> inputWord) {
         mapTrie.insert(inputWord);
-//        arrayTrie.insert(inputWord);
+        arrayTrie.insert(inputWord);
     }
 
     inputFile.close();
 
-//    cout << measureTrieTime(mapTrie) << endl;
-//    cout << measureTrieTime(arrayTrie) << endl;
-
     string prefix;
 
+    cout << "Enter word: ";
     cin >> prefix;
 
-    vector<string> words = mapTrie.findByPrefix(prefix);
+    cout << endl;
+
+    cout << "Search" << endl;
+    cout << "Trie on array: " << measureTrieTime(arrayTrie, prefix) << endl;
+    cout << "Trie on map: " << measureTrieTime(mapTrie, prefix) << endl;
+
+    cout << endl;
+
+    vector<string> words = arrayTrie.findByPrefix(prefix);
 
     printVector(words);
 

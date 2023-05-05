@@ -1,57 +1,77 @@
 #include "../../headers/data_structures/MapTrie.h"
 
-MapTrie::MapTrie() {
-    root = new Node();
-}
-
-void MapTrie::insert(const string& key) {
-    Node *currentNode = root;
+void MapTrie::insert(const string &key) {
+    MapTrieNode *currentNode = root;
 
     for (char c: key) {
         int index = c - 'a';
 
-        if (currentNode->children[index] == nullptr) {
-            currentNode->children[index] = new Node();
+        if (currentNode->getChild(index) == nullptr) {
+            currentNode->setChild(index, new MapTrieNode());
         }
 
-        currentNode = currentNode->children[index];
+        currentNode = currentNode->getChild(index);
     }
 
-    currentNode->isWord = true;
+    currentNode->setIsWord(true);
 }
 
-vector<string> MapTrie::findByPrefix(const string& prefix) {
+vector<string> MapTrie::findByPrefix(const string &prefix) {
     vector<string> words;
 
-    Node *currentNode = root;
+    MapTrieNode *currentNode = root;
 
     for (char c: prefix) {
         int index = c - 'a';
 
-        if (currentNode->children[index] == nullptr) {
+        if (currentNode->getChild(index) == nullptr) {
             return words;
         }
 
-        currentNode = currentNode->children[index];
+        currentNode = currentNode->getChild(index);
     }
 
-    fillWordsVector(words, currentNode, prefix);
+    string nextWord = prefix;
+
+    fillWordsVector(words, currentNode, nextWord);
 
     return words;
 }
 
-void MapTrie::fillWordsVector(vector<string> &words, const Node *node, string &nextWord) {
+void MapTrie::fillWordsVector(vector<string> &words, MapTrieNode *node, string &nextWord) {
     if (node == nullptr) {
         return;
     }
 
-    if (node->isWord) {
+    if (node->isWord()) {
         words.push_back(nextWord);
     }
 
-    for (auto &child: node->children) {
+    for (auto &child: node->getChildren()) {
         nextWord.push_back((char) (child.first + 'a'));
         fillWordsVector(words, child.second, nextWord);
         nextWord.pop_back();
     }
 }
+
+bool MapTrieNode::isWord() const {
+    return isEndOfWord;
+}
+
+void MapTrieNode::setIsWord(bool isEndOfWord) {
+    MapTrieNode::isEndOfWord = isEndOfWord;
+}
+
+unordered_map<char, MapTrieNode*> &MapTrieNode::getChildren() {
+    return children;
+}
+
+MapTrieNode *MapTrieNode::getChild(int index) {
+    return children[index];
+}
+
+void MapTrieNode::setChild(int index, MapTrieNode *child) {
+    this->children[index] = child;
+}
+
+

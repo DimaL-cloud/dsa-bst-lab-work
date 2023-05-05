@@ -12,6 +12,8 @@ private:
     Node *left = nullptr;
     Node *right = nullptr;
 
+    int height = 0;
+
 public:
     explicit Node(const Student &student);
 
@@ -27,12 +29,14 @@ public:
 
     void setRight(Node *right);
 
+    int getHeight() const;
+
+    void setHeight(int height);
 };
 
 struct BinarySearchTree {
 private:
     Node *root = nullptr;
-    int nodesAmount = 0;
 
 public:
     void insert(const Student &student);
@@ -41,28 +45,50 @@ public:
 
     void erase(const Student &student);
 
+    /*
+     * Optimized version O(log(n)), where n is number of nodes
+     */
     int findInRange(const Student &minStudent, const Student &maxStudent);
 
+    /*
+     * Trivial version O(n), where n is number of nodes
+     */
+    int findInRangeTrivial(const Student &minStudent, const Student &maxStudent);
+
     void print();
+
+    int height();
 
     int size();
 
 private:
-    Node *insertImpl(Node *tree, const Student &student);
+    Node *insertImpl(Node *node, const Student &student);
 
-    bool findImpl(Node *tree, const Student &student);
+    bool findImpl(Node *node, const Student &student);
 
-    Node *eraseImpl(Node *tree, const Student &student);
+    Node *eraseImpl(Node *node, const Student &student);
 
-    Node *findMinValueNode(Node *tree);
+    Node *findMinValueNode(Node *node);
 
-    int sizeOfSubtree(Node *tree);
+    int sizeImpl(Node *node);
 
-    void printImpl(Node *tree);
+    void printImpl(Node *node);
 
-    void splitTree(Node *tree, const Student &student, Node *leftTree, Node *rightTree);
+    int heightImpl(Node *node);
 
-    void mergeTrees(Node *tree, Node *leftTree, Node *rightTree);
+    void findInRangeTrivialImpl(const Student &minStudent, const Student &maxStudent, Node *node, int& foundAmount);
+
+    void splitTree(Node *node, const Student &student, Node *leftTree, Node *rightTree);
+
+    void mergeTrees(Node *node, Node *leftNode, Node *rightNode);
+
+    int max(int firstNumber, int secondNumber) const;
+
+    Node *rotateRight(Node *node);
+
+    Node *rotateLeft(Node *node);
+
+    int getBalanceFactor(Node *node);
 };
 
 

@@ -233,6 +233,9 @@ Lab4_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Lab4_SOURCE_DIR:STATIC=/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4
 
+//Path to a library.
+sources:FILEPATH=sources-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

@@ -41,61 +41,61 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/cmake-build-release/
 # =============================================================================
-# Object build statements for EXECUTABLE target Lab4
+# Object build statements for EXECUTABLE target Task1BST
 
 
 #############################################
-# Order-only phony target for Lab4
+# Order-only phony target for Task1BST
 
-build cmake_object_order_depends_target_Lab4: phony || CMakeFiles/Lab4.dir
+build cmake_object_order_depends_target_Task1BST: phony || CMakeFiles/Task1BST.dir
 
-build CMakeFiles/Lab4.dir/sources/Task1BST.cpp.o: CXX_COMPILER__Lab4_Release /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/Task1BST.cpp || cmake_object_order_depends_target_Lab4
-  DEP_FILE = CMakeFiles/Lab4.dir/sources/Task1BST.cpp.o.d
+build CMakeFiles/Task1BST.dir/sources/Task1BST.cpp.o: CXX_COMPILER__Task1BST_Release /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/Task1BST.cpp || cmake_object_order_depends_target_Task1BST
+  DEP_FILE = CMakeFiles/Task1BST.dir/sources/Task1BST.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Lab4.dir
-  OBJECT_FILE_DIR = CMakeFiles/Lab4.dir/sources
+  OBJECT_DIR = CMakeFiles/Task1BST.dir
+  OBJECT_FILE_DIR = CMakeFiles/Task1BST.dir/sources
 
-build CMakeFiles/Lab4.dir/sources/entities/Student.cpp.o: CXX_COMPILER__Lab4_Release /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/entities/Student.cpp || cmake_object_order_depends_target_Lab4
-  DEP_FILE = CMakeFiles/Lab4.dir/sources/entities/Student.cpp.o.d
+build CMakeFiles/Task1BST.dir/sources/entities/Student.cpp.o: CXX_COMPILER__Task1BST_Release /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/entities/Student.cpp || cmake_object_order_depends_target_Task1BST
+  DEP_FILE = CMakeFiles/Task1BST.dir/sources/entities/Student.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Lab4.dir
-  OBJECT_FILE_DIR = CMakeFiles/Lab4.dir/sources/entities
+  OBJECT_DIR = CMakeFiles/Task1BST.dir
+  OBJECT_FILE_DIR = CMakeFiles/Task1BST.dir/sources/entities
 
-build CMakeFiles/Lab4.dir/sources/data_structures/BinarySearchTree.cpp.o: CXX_COMPILER__Lab4_Release /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/BinarySearchTree.cpp || cmake_object_order_depends_target_Lab4
-  DEP_FILE = CMakeFiles/Lab4.dir/sources/data_structures/BinarySearchTree.cpp.o.d
+build CMakeFiles/Task1BST.dir/sources/data_structures/BinarySearchTree.cpp.o: CXX_COMPILER__Task1BST_Release /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/BinarySearchTree.cpp || cmake_object_order_depends_target_Task1BST
+  DEP_FILE = CMakeFiles/Task1BST.dir/sources/data_structures/BinarySearchTree.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Lab4.dir
-  OBJECT_FILE_DIR = CMakeFiles/Lab4.dir/sources/data_structures
+  OBJECT_DIR = CMakeFiles/Task1BST.dir
+  OBJECT_FILE_DIR = CMakeFiles/Task1BST.dir/sources/data_structures
 
-build CMakeFiles/Lab4.dir/sources/data_structures/ArrayTrie.cpp.o: CXX_COMPILER__Lab4_Release /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/ArrayTrie.cpp || cmake_object_order_depends_target_Lab4
-  DEP_FILE = CMakeFiles/Lab4.dir/sources/data_structures/ArrayTrie.cpp.o.d
+build CMakeFiles/Task1BST.dir/sources/data_structures/ArrayTrie.cpp.o: CXX_COMPILER__Task1BST_Release /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/ArrayTrie.cpp || cmake_object_order_depends_target_Task1BST
+  DEP_FILE = CMakeFiles/Task1BST.dir/sources/data_structures/ArrayTrie.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Lab4.dir
-  OBJECT_FILE_DIR = CMakeFiles/Lab4.dir/sources/data_structures
+  OBJECT_DIR = CMakeFiles/Task1BST.dir
+  OBJECT_FILE_DIR = CMakeFiles/Task1BST.dir/sources/data_structures
 
-build CMakeFiles/Lab4.dir/sources/data_structures/MapTrie.cpp.o: CXX_COMPILER__Lab4_Release /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/MapTrie.cpp || cmake_object_order_depends_target_Lab4
-  DEP_FILE = CMakeFiles/Lab4.dir/sources/data_structures/MapTrie.cpp.o.d
+build CMakeFiles/Task1BST.dir/sources/data_structures/MapTrie.cpp.o: CXX_COMPILER__Task1BST_Release /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/MapTrie.cpp || cmake_object_order_depends_target_Task1BST
+  DEP_FILE = CMakeFiles/Task1BST.dir/sources/data_structures/MapTrie.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++14
-  OBJECT_DIR = CMakeFiles/Lab4.dir
-  OBJECT_FILE_DIR = CMakeFiles/Lab4.dir/sources/data_structures
+  OBJECT_DIR = CMakeFiles/Task1BST.dir
+  OBJECT_FILE_DIR = CMakeFiles/Task1BST.dir/sources/data_structures
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Lab4
+# Link build statements for EXECUTABLE target Task1BST
 
 
 #############################################
-# Link the executable Lab4.exe
+# Link the executable Task1BST.exe
 
-build Lab4.exe: CXX_EXECUTABLE_LINKER__Lab4_Release CMakeFiles/Lab4.dir/sources/Task1BST.cpp.o CMakeFiles/Lab4.dir/sources/entities/Student.cpp.o CMakeFiles/Lab4.dir/sources/data_structures/BinarySearchTree.cpp.o CMakeFiles/Lab4.dir/sources/data_structures/ArrayTrie.cpp.o CMakeFiles/Lab4.dir/sources/data_structures/MapTrie.cpp.o
+build Task1BST.exe: CXX_EXECUTABLE_LINKER__Task1BST_Release CMakeFiles/Task1BST.dir/sources/Task1BST.cpp.o CMakeFiles/Task1BST.dir/sources/entities/Student.cpp.o CMakeFiles/Task1BST.dir/sources/data_structures/BinarySearchTree.cpp.o CMakeFiles/Task1BST.dir/sources/data_structures/ArrayTrie.cpp.o CMakeFiles/Task1BST.dir/sources/data_structures/MapTrie.cpp.o
   FLAGS = -O3 -DNDEBUG
   LINK_FLAGS = -Wl,--enable-auto-import
-  OBJECT_DIR = CMakeFiles/Lab4.dir
+  OBJECT_DIR = CMakeFiles/Task1BST.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = Lab4.exe
-  TARGET_IMPLIB = libLab4.dll.a
-  TARGET_PDB = Lab4.exe.dbg
+  TARGET_FILE = Task1BST.exe
+  TARGET_IMPLIB = libTask1BST.dll.a
+  TARGET_PDB = Task1BST.exe.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Task2Trie
@@ -213,7 +213,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build Lab4: phony Lab4.exe
+build Task1BST: phony Task1BST.exe
 
 build Task2Trie: phony Task2Trie.exe
 
@@ -227,7 +227,7 @@ build Task3SameTree: phony Task3SameTree.exe
 #############################################
 # Folder: /cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/cmake-build-release
 
-build all: phony Lab4.exe Task2Trie.exe Task3SameTree.exe
+build all: phony Task1BST.exe Task2Trie.exe Task3SameTree.exe
 
 # =============================================================================
 # Built-in targets

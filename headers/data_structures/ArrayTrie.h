@@ -9,27 +9,34 @@
 
 using namespace std;
 
+struct ArrayTrieNode {
+private:
+    ArrayTrieNode *children[ALPHABET_SIZE];
+    bool isEndOfWord = false;
+
+public:
+    ArrayTrieNode();
+
+    bool isWord() const;
+
+    void setIsWord(bool isEndOfWord);
+
+    ArrayTrieNode *getChild(int index);
+
+    void setChild(int index, ArrayTrieNode *child);
+};
 
 struct ArrayTrie {
 private:
-    struct Node {
-        Node *children[ALPHABET_SIZE];
-        bool isWord = false;
-
-        Node();
-    };
-
-    Node *root;
+    ArrayTrieNode *root = new ArrayTrieNode();
 
 public:
-    ArrayTrie();
+    void insert(const string &key);
 
-    void insert(const string& key);
-
-    vector<string> findByPrefix(const string& prefix);
+    vector<string> findByPrefix(const string &prefix);
 
 private:
-    void fillWordsVector(vector<string> &words, const Node *node, string &nextWord);
+    void fillWordsVector(vector<string> &words, ArrayTrieNode *node, string &nextWord);
 };
 
 

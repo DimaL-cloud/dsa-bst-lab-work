@@ -1,62 +1,60 @@
 #include "../../headers/data_structures/ArrayTrie.h"
 
-ArrayTrie::Node::Node() {
+ArrayTrieNode::ArrayTrieNode() {
     for (int i = 0; i < ALPHABET_SIZE; i++) {
         children[i] = nullptr;
     }
 }
 
-ArrayTrie::ArrayTrie() {
-    root = new Node();
-}
+void ArrayTrie::insert(const string &key) {
+    ArrayTrieNode *currentNode = root;
 
-void ArrayTrie::insert(const string& key) {
-    Node *currentNode = root;
-
-    for (char c : key) {
+    for (char c: key) {
         int index = c - 'a';
 
-        if (currentNode->children[index] == nullptr) {
-            currentNode->children[index] = new Node();
+        if (currentNode->getChild(index) == nullptr) {
+            currentNode->setChild(index, new ArrayTrieNode());
         }
 
-        currentNode = currentNode->children[index];
+        currentNode = currentNode->getChild(index);
     }
 
-    currentNode->isWord = true;
+    currentNode->setIsWord(true);
 }
 
-vector<string> ArrayTrie::findByPrefix(const string& prefix) {
+vector<string> ArrayTrie::findByPrefix(const string &prefix) {
     vector<string> words;
 
-    Node *currentNode = root;
+    ArrayTrieNode *currentNode = root;
 
-    for (char c : prefix) {
+    for (char c: prefix) {
         int index = c - 'a';
 
-        if (currentNode->children[index] == nullptr) {
+        if (currentNode->getChild(index) == nullptr) {
             return words;
         }
 
-        currentNode = currentNode->children[index];
+        currentNode = currentNode->getChild(index);
     }
 
-    fillWordsVector(words, currentNode, prefix);
+    string nextWord = prefix;
+
+    fillWordsVector(words, currentNode, nextWord);
 
     return words;
 }
 
-void ArrayTrie::fillWordsVector(vector<string> &words, const Node *node, string &nextWord) {
+void ArrayTrie::fillWordsVector(vector<string> &words, ArrayTrieNode *node, string &nextWord) {
     if (node == nullptr) {
         return;
     }
 
-    if (node->isWord) {
+    if (node->isWord()) {
         words.push_back(nextWord);
     }
 
     for (int i = 0; i < ALPHABET_SIZE; i++) {
-        Node *child = node->children[i];
+        ArrayTrieNode *child = node->getChild(i);
 
         if (child != nullptr) {
             nextWord.push_back((char) (i + 'a'));
@@ -64,4 +62,20 @@ void ArrayTrie::fillWordsVector(vector<string> &words, const Node *node, string 
             nextWord.pop_back();
         }
     }
+}
+
+bool ArrayTrieNode::isWord() const {
+    return isEndOfWord;
+}
+
+void ArrayTrieNode::setIsWord(bool isEndOfWord) {
+    ArrayTrieNode::isEndOfWord = isEndOfWord;
+}
+
+ArrayTrieNode *ArrayTrieNode::getChild(int index) {
+    return children[index];
+}
+
+void ArrayTrieNode::setChild(int index, ArrayTrieNode *child) {
+    this->children[index] = child;
 }

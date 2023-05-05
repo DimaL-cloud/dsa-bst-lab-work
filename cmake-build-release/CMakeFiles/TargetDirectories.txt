@@ -1,4 +1,4 @@
-/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/cmake-build-release/CMakeFiles/Lab4.dir
+/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/cmake-build-release/CMakeFiles/Task1BST.dir
 /cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/cmake-build-release/CMakeFiles/Task2Trie.dir
 /cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/cmake-build-release/CMakeFiles/Task3SameTree.dir
 /cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/cmake-build-release/CMakeFiles/edit_cache.dir

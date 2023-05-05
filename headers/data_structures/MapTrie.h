@@ -8,24 +8,35 @@
 
 using namespace std;
 
-struct MapTrie {
+struct MapTrieNode {
 private:
-    struct Node {
-        unordered_map<char, Node*> children;
-        bool isWord = false;
-    };
-
-    Node *root;
+    unordered_map<char, MapTrieNode*> children;
+    bool isEndOfWord = false;
 
 public:
-    MapTrie();
+    bool isWord() const;
 
+    void setIsWord(bool isEndOfWord);
+
+    unordered_map<char, MapTrieNode*> &getChildren();
+
+    MapTrieNode *getChild(int index);
+
+    void setChild(int index, MapTrieNode *child);
+
+};
+
+struct MapTrie {
+private:
+    MapTrieNode *root = new MapTrieNode();
+
+public:
     void insert(const string& key);
 
     vector<string> findByPrefix(const string& prefix);
 
 private:
-    void fillWordsVector(vector<string> &words, const Node *node, string &nextWord);
+    void fillWordsVector(vector<string> &words, MapTrieNode *node, string& nextWord);
 };
 
 
