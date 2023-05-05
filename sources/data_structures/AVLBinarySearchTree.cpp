@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../../headers/data_structures/BinarySearchTree.h"
+#include "data_structures/AVLBinarySearchTree.h"
 
 Node::Node(const Student &student) : student(student) {}
 
@@ -35,11 +35,11 @@ void Node::setHeight(int height) {
     Node::height = height;
 }
 
-void BinarySearchTree::insert(const Student &student) {
+void AVLBinarySearchTree::insert(const Student &student) {
     root = insertImpl(root, student);
 }
 
-Node *BinarySearchTree::insertImpl(Node *node, const Student &student) {
+Node *AVLBinarySearchTree::insertImpl(Node *node, const Student &student) {
     if (node == nullptr) {
         node = new Node(student);
     } else if (student < node->getStudent()) {
@@ -80,11 +80,11 @@ Node *BinarySearchTree::insertImpl(Node *node, const Student &student) {
     return node;
 }
 
-void BinarySearchTree::print() {
+void AVLBinarySearchTree::print() {
     printImpl(root);
 }
 
-void BinarySearchTree::printImpl(Node *node) {
+void AVLBinarySearchTree::printImpl(Node *node) {
     if (node != nullptr) {
         printImpl(node->getLeft());
         cout << node->getStudent() << endl;
@@ -92,15 +92,15 @@ void BinarySearchTree::printImpl(Node *node) {
     }
 }
 
-int BinarySearchTree::size() {
+int AVLBinarySearchTree::size() {
     return sizeImpl(root);
 }
 
-bool BinarySearchTree::find(const Student &student) {
+bool AVLBinarySearchTree::find(const Student &student) {
     return findImpl(root, student);
 }
 
-bool BinarySearchTree::findImpl(Node *node, const Student &student) {
+bool AVLBinarySearchTree::findImpl(Node *node, const Student &student) {
     if (node == nullptr || node->getStudent() == student) {
         return node != nullptr;
     }
@@ -110,11 +110,11 @@ bool BinarySearchTree::findImpl(Node *node, const Student &student) {
     } else return findImpl(node->getRight(), student);
 }
 
-void BinarySearchTree::erase(const Student &student) {
+void AVLBinarySearchTree::erase(const Student &student) {
     root = eraseImpl(root, student);
 }
 
-Node *BinarySearchTree::eraseImpl(Node *node, const Student &student) {
+Node *AVLBinarySearchTree::eraseImpl(Node *node, const Student &student) {
     if (node == nullptr) {
         return nullptr;
     }
@@ -142,10 +142,33 @@ Node *BinarySearchTree::eraseImpl(Node *node, const Student &student) {
         node->setRight(eraseImpl(node->getRight(), minValueNode->getStudent()));
     }
 
+    node->setHeight(1 + max(heightImpl(node->getLeft()),
+                            heightImpl(node->getRight())));
+
+    int balanceFactor = getBalanceFactor(node);
+
+    if (balanceFactor > 1) {
+        if (getBalanceFactor(node->getLeft()) >= 0) {
+            return rotateRight(node);
+        } else {
+            node->setLeft(rotateLeft(node->getLeft()));
+            return rotateRight(node);
+        }
+    }
+
+    if (balanceFactor < -1) {
+        if (getBalanceFactor(node->getRight()) <= 0) {
+            return rotateLeft(node);
+        } else {
+            node->setRight(rotateRight(node->getRight()));
+            return rotateLeft(node);
+        }
+    }
+
     return node;
 }
 
-Node *BinarySearchTree::findMinValueNode(Node *node) {
+Node *AVLBinarySearchTree::findMinValueNode(Node *node) {
     if (node == nullptr) {
         return nullptr;
     }
@@ -159,7 +182,7 @@ Node *BinarySearchTree::findMinValueNode(Node *node) {
     return currentNode;
 }
 
-int BinarySearchTree::findInRange(const Student &minStudent, const Student &maxStudent) {
+int AVLBinarySearchTree::findInRange(const Student &minStudent, const Student &maxStudent) {
     Node *leftTree;
     Node *middleTree;
     Node *rightTree;
@@ -174,39 +197,39 @@ int BinarySearchTree::findInRange(const Student &minStudent, const Student &maxS
     return size;
 }
 
-int BinarySearchTree::sizeImpl(Node *node) {
+int AVLBinarySearchTree::sizeImpl(Node *node) {
     if (node == nullptr) {
         return 0;
     }
     return 1 + sizeImpl(node->getLeft()) + sizeImpl(node->getRight());
 }
 
-void BinarySearchTree::splitTree(Node *node, const Student &student, Node *leftTree, Node *rightTree) {
+void AVLBinarySearchTree::splitTree(Node *node, const Student &student, Node *&leftTree, Node *&rightTree) {
     if (node == nullptr) {
         leftTree = nullptr;
         rightTree = nullptr;
     } else if (node->getStudent() <= student) {
-        splitTree(node->getRight(), student, node->getRight(), rightTree);
+        splitTree(node->getRight(), student, node->right, rightTree);
         leftTree = node;
     } else {
-        splitTree(node->getLeft(), student, leftTree, node->getLeft());
+        splitTree(node->getLeft(), student, leftTree, node->left);
         rightTree = node;
     }
 }
 
-void BinarySearchTree::mergeTrees(Node *node, Node *leftNode, Node *rightNode) {
+void AVLBinarySearchTree::mergeTrees(Node *&node, Node *leftNode, Node *rightNode) {
     if (leftNode == nullptr || rightNode == nullptr) {
         node = (leftNode != nullptr) ? leftNode : rightNode;
     } else if (leftNode->getStudent() > rightNode->getStudent()) {
-        mergeTrees(leftNode->getRight(), leftNode->getLeft(), rightNode);
+        mergeTrees(leftNode->right, leftNode->getLeft(), rightNode);
         node = leftNode;
     } else {
-        mergeTrees(rightNode->getLeft(), leftNode, rightNode->getLeft());
+        mergeTrees(rightNode->left, leftNode, rightNode->getLeft());
         node = rightNode;
     }
 }
 
-int BinarySearchTree::findInRangeTrivial(const Student &minStudent, const Student &maxStudent) {
+int AVLBinarySearchTree::findInRangeTrivial(const Student &minStudent, const Student &maxStudent) {
     int foundAmount = 0;
 
     findInRangeTrivialImpl(minStudent, maxStudent, root, foundAmount);
@@ -214,8 +237,8 @@ int BinarySearchTree::findInRangeTrivial(const Student &minStudent, const Studen
     return foundAmount;
 }
 
-void BinarySearchTree::findInRangeTrivialImpl(const Student &minStudent, const Student &maxStudent, Node *node,
-                                              int &foundAmount) {
+void AVLBinarySearchTree::findInRangeTrivialImpl(const Student &minStudent, const Student &maxStudent, Node *node,
+                                                 int &foundAmount) {
     if (node == nullptr) {
         return;
     }
@@ -233,11 +256,11 @@ void BinarySearchTree::findInRangeTrivialImpl(const Student &minStudent, const S
     }
 }
 
-int BinarySearchTree::height() {
+int AVLBinarySearchTree::height() {
     return heightImpl(root);
 }
 
-int BinarySearchTree::heightImpl(Node *node) {
+int AVLBinarySearchTree::heightImpl(Node *node) {
     if (node == nullptr) {
         return 0;
     }
@@ -245,11 +268,11 @@ int BinarySearchTree::heightImpl(Node *node) {
     return node->getHeight();
 }
 
-int BinarySearchTree::max(int firstNumber, int secondNumber) const {
+int AVLBinarySearchTree::max(int firstNumber, int secondNumber) const {
     return (firstNumber > secondNumber) ? firstNumber : secondNumber;
 }
 
-Node *BinarySearchTree::rotateRight(Node *node) {
+Node *AVLBinarySearchTree::rotateRight(Node *node) {
     Node *leftChild = node->getLeft();
     Node *rightSubtreeOfLeftChild = leftChild->getRight();
 
@@ -265,7 +288,7 @@ Node *BinarySearchTree::rotateRight(Node *node) {
     return leftChild;
 }
 
-Node *BinarySearchTree::rotateLeft(Node *node) {
+Node *AVLBinarySearchTree::rotateLeft(Node *node) {
     Node *rightChild = node->getRight();
     Node *leftSubtreeOfRightChild = rightChild->getLeft();
 
@@ -280,12 +303,10 @@ Node *BinarySearchTree::rotateLeft(Node *node) {
     return rightChild;
 }
 
-int BinarySearchTree::getBalanceFactor(Node *node) {
+int AVLBinarySearchTree::getBalanceFactor(Node *node) {
     if (node == nullptr) {
         return 0;
     }
 
     return heightImpl(node->getLeft()) - heightImpl(node->getRight());
 }
-
-

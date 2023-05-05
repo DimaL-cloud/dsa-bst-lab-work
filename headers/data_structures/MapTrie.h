@@ -28,9 +28,13 @@ public:
 
 struct MapTrie {
 private:
-    MapTrieNode *root = new MapTrieNode();
+    MapTrieNode *root;
 
 public:
+    MapTrie();
+
+    virtual ~MapTrie();
+
     void insert(const string& key);
 
     vector<string> findByPrefix(const string& prefix);

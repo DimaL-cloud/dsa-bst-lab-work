@@ -2,8 +2,8 @@
 #include <fstream>
 #include <vector>
 
-#include "../headers/data_structures/ArrayTrie.h"
-#include "../headers/data_structures/MapTrie.h"
+#include "data_structures/ArrayTrie.h"
+#include "data_structures/MapTrie.h"
 
 #define WORDS_FILE_PATH "words_alpha.txt"
 #define SEARCH_ITERATIONS 500
@@ -66,15 +66,15 @@ int main() {
 
     cout << endl;
 
-    cout << "Search" << endl;
+    cout << "Search " << SEARCH_ITERATIONS << " iterations" << endl;
     cout << "Trie on array: " << measureTrieTime(arrayTrie, prefix) << endl;
-    cout << "Trie on map: " << measureTrieTime(mapTrie, prefix) << endl;
+    cout << "Trie on map (unordered_map): " << measureTrieTime(mapTrie, prefix) << endl;
 
     cout << endl;
 
-    vector<string> words = arrayTrie.findByPrefix(prefix);
-
-    printVector(words);
+//    vector<string> words = arrayTrie.findByPrefix(prefix);
+//
+//    printVector(words);
 
     return 0;
 }

@@ -4,7 +4,7 @@
 #include <string>
 #include <ostream>
 
-#include "../enums/Evaluation.h"
+#include "enums/Evaluation.h"
 
 using namespace std;
 
@@ -31,6 +31,8 @@ public:
 
     void setCheatedWorksAmount(int cheatedWorksAmount);
 
+    friend ostream &operator<<(ostream &os, const Student &student);
+
     bool operator==(const Student &rhs) const;
 
     bool operator!=(const Student &rhs) const;
@@ -42,8 +44,6 @@ public:
     bool operator<=(const Student &rhs) const;
 
     bool operator>=(const Student &rhs) const;
-
-    friend ostream &operator<<(ostream &os, const Student &student);
 };
 
 

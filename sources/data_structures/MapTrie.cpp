@@ -1,4 +1,12 @@
-#include "../../headers/data_structures/MapTrie.h"
+#include "data_structures/MapTrie.h"
+
+MapTrie::MapTrie() {
+    root = new MapTrieNode();
+}
+
+MapTrie::~MapTrie() {
+    delete root;
+}
 
 void MapTrie::insert(const string &key) {
     MapTrieNode *currentNode = root;

@@ -1,12 +1,12 @@
-#ifndef LAB4_BINARYSEARCHTREE_H
-#define LAB4_BINARYSEARCHTREE_H
+#ifndef LAB4_AVLBINARYSEARCHTREE_H
+#define LAB4_AVLBINARYSEARCHTREE_H
 
 #include <vector>
 
-#include "../entities/Student.h"
+#include "entities/Student.h"
 
 struct Node {
-private:
+//private:
     Student student;
 
     Node *left = nullptr;
@@ -34,7 +34,7 @@ public:
     void setHeight(int height);
 };
 
-struct BinarySearchTree {
+struct AVLBinarySearchTree {
 private:
     Node *root = nullptr;
 
@@ -49,6 +49,8 @@ public:
      * Optimized version O(log(n)), where n is number of nodes
      */
     int findInRange(const Student &minStudent, const Student &maxStudent);
+
+    void eraseRange(const Student &minStudent, const Student &maxStudent);
 
     /*
      * Trivial version O(n), where n is number of nodes
@@ -76,11 +78,11 @@ private:
 
     int heightImpl(Node *node);
 
-    void findInRangeTrivialImpl(const Student &minStudent, const Student &maxStudent, Node *node, int& foundAmount);
+    void findInRangeTrivialImpl(const Student &minStudent, const Student &maxStudent, Node *node, int &foundAmount);
 
-    void splitTree(Node *node, const Student &student, Node *leftTree, Node *rightTree);
+    void splitTree(Node *node, const Student &student, Node *&leftTree, Node *&rightTree);
 
-    void mergeTrees(Node *node, Node *leftNode, Node *rightNode);
+    void mergeTrees(Node *&node, Node *leftNode, Node *rightNode);
 
     int max(int firstNumber, int secondNumber) const;
 
@@ -92,4 +94,4 @@ private:
 };
 
 
-#endif //LAB4_BINARYSEARCHTREE_H
+#endif //LAB4_AVLBINARYSEARCHTREE_H

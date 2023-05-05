@@ -1,4 +1,4 @@
-#include "../../headers/data_structures/ArrayTrie.h"
+#include "data_structures/ArrayTrie.h"
 
 ArrayTrieNode::ArrayTrieNode() {
     for (int i = 0; i < ALPHABET_SIZE; i++) {

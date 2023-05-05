@@ -1,4 +1,4 @@
-#include "../../headers/entities/Student.h"
+#include "entities/Student.h"
 
 Student::Student(const string &name, Evaluation learningDesirement, int cheatedWorksAmount) : name(name),
                                                                                               learningDesirement(
@@ -13,7 +13,7 @@ Student::Student() {
 
     this->name = allNames[rand() % 9];
     this->learningDesirement = Evaluation(1 + rand() % 5);
-    this->cheatedWorksAmount = rand() % 15;
+    this->cheatedWorksAmount = rand() % 1'000'000;
 }
 
 const string &Student::getName() const {
@@ -40,6 +40,12 @@ void Student::setCheatedWorksAmount(int cheatedWorksAmount) {
     Student::cheatedWorksAmount = cheatedWorksAmount;
 }
 
+ostream &operator<<(ostream &os, const Student &student) {
+    os << "name: " << student.name << " learningDesirement: " << student.learningDesirement << " cheatedWorksAmount: "
+       << student.cheatedWorksAmount;
+    return os;
+}
+
 bool Student::operator==(const Student &rhs) const {
     return cheatedWorksAmount == rhs.cheatedWorksAmount;
 }
@@ -62,10 +68,4 @@ bool Student::operator<=(const Student &rhs) const {
 
 bool Student::operator>=(const Student &rhs) const {
     return !(*this < rhs);
-}
-
-ostream &operator<<(ostream &os, const Student &student) {
-    os << "name: " << student.name << " learningDesirement: " << student.learningDesirement << " cheatedWorksAmount: "
-       << student.cheatedWorksAmount;
-    return os;
 }

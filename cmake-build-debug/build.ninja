@@ -52,30 +52,35 @@ build cmake_object_order_depends_target_Task1BST: phony || CMakeFiles/Task1BST.d
 build CMakeFiles/Task1BST.dir/sources/Task1BST.cpp.o: CXX_COMPILER__Task1BST_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/Task1BST.cpp || cmake_object_order_depends_target_Task1BST
   DEP_FILE = CMakeFiles/Task1BST.dir/sources/Task1BST.cpp.o.d
   FLAGS = -g -std=gnu++14
+  INCLUDES = -I"/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/headers"
   OBJECT_DIR = CMakeFiles/Task1BST.dir
   OBJECT_FILE_DIR = CMakeFiles/Task1BST.dir/sources
 
 build CMakeFiles/Task1BST.dir/sources/entities/Student.cpp.o: CXX_COMPILER__Task1BST_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/entities/Student.cpp || cmake_object_order_depends_target_Task1BST
   DEP_FILE = CMakeFiles/Task1BST.dir/sources/entities/Student.cpp.o.d
   FLAGS = -g -std=gnu++14
+  INCLUDES = -I"/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/headers"
   OBJECT_DIR = CMakeFiles/Task1BST.dir
   OBJECT_FILE_DIR = CMakeFiles/Task1BST.dir/sources/entities
 
-build CMakeFiles/Task1BST.dir/sources/data_structures/BinarySearchTree.cpp.o: CXX_COMPILER__Task1BST_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/BinarySearchTree.cpp || cmake_object_order_depends_target_Task1BST
-  DEP_FILE = CMakeFiles/Task1BST.dir/sources/data_structures/BinarySearchTree.cpp.o.d
+build CMakeFiles/Task1BST.dir/sources/data_structures/AVLBinarySearchTree.cpp.o: CXX_COMPILER__Task1BST_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/AVLBinarySearchTree.cpp || cmake_object_order_depends_target_Task1BST
+  DEP_FILE = CMakeFiles/Task1BST.dir/sources/data_structures/AVLBinarySearchTree.cpp.o.d
   FLAGS = -g -std=gnu++14
+  INCLUDES = -I"/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/headers"
   OBJECT_DIR = CMakeFiles/Task1BST.dir
   OBJECT_FILE_DIR = CMakeFiles/Task1BST.dir/sources/data_structures
 
 build CMakeFiles/Task1BST.dir/sources/data_structures/ArrayTrie.cpp.o: CXX_COMPILER__Task1BST_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/ArrayTrie.cpp || cmake_object_order_depends_target_Task1BST
   DEP_FILE = CMakeFiles/Task1BST.dir/sources/data_structures/ArrayTrie.cpp.o.d
   FLAGS = -g -std=gnu++14
+  INCLUDES = -I"/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/headers"
   OBJECT_DIR = CMakeFiles/Task1BST.dir
   OBJECT_FILE_DIR = CMakeFiles/Task1BST.dir/sources/data_structures
 
 build CMakeFiles/Task1BST.dir/sources/data_structures/MapTrie.cpp.o: CXX_COMPILER__Task1BST_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/MapTrie.cpp || cmake_object_order_depends_target_Task1BST
   DEP_FILE = CMakeFiles/Task1BST.dir/sources/data_structures/MapTrie.cpp.o.d
   FLAGS = -g -std=gnu++14
+  INCLUDES = -I"/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/headers"
   OBJECT_DIR = CMakeFiles/Task1BST.dir
   OBJECT_FILE_DIR = CMakeFiles/Task1BST.dir/sources/data_structures
 
@@ -87,7 +92,7 @@ build CMakeFiles/Task1BST.dir/sources/data_structures/MapTrie.cpp.o: CXX_COMPILE
 #############################################
 # Link the executable Task1BST.exe
 
-build Task1BST.exe: CXX_EXECUTABLE_LINKER__Task1BST_Debug CMakeFiles/Task1BST.dir/sources/Task1BST.cpp.o CMakeFiles/Task1BST.dir/sources/entities/Student.cpp.o CMakeFiles/Task1BST.dir/sources/data_structures/BinarySearchTree.cpp.o CMakeFiles/Task1BST.dir/sources/data_structures/ArrayTrie.cpp.o CMakeFiles/Task1BST.dir/sources/data_structures/MapTrie.cpp.o
+build Task1BST.exe: CXX_EXECUTABLE_LINKER__Task1BST_Debug CMakeFiles/Task1BST.dir/sources/Task1BST.cpp.o CMakeFiles/Task1BST.dir/sources/entities/Student.cpp.o CMakeFiles/Task1BST.dir/sources/data_structures/AVLBinarySearchTree.cpp.o CMakeFiles/Task1BST.dir/sources/data_structures/ArrayTrie.cpp.o CMakeFiles/Task1BST.dir/sources/data_structures/MapTrie.cpp.o
   FLAGS = -g
   LINK_FLAGS = -Wl,--enable-auto-import
   OBJECT_DIR = CMakeFiles/Task1BST.dir
@@ -109,30 +114,35 @@ build cmake_object_order_depends_target_Task2Trie: phony || CMakeFiles/Task2Trie
 build CMakeFiles/Task2Trie.dir/sources/Task2Trie.cpp.o: CXX_COMPILER__Task2Trie_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/Task2Trie.cpp || cmake_object_order_depends_target_Task2Trie
   DEP_FILE = CMakeFiles/Task2Trie.dir/sources/Task2Trie.cpp.o.d
   FLAGS = -g -std=gnu++14
+  INCLUDES = -I"/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/headers"
   OBJECT_DIR = CMakeFiles/Task2Trie.dir
   OBJECT_FILE_DIR = CMakeFiles/Task2Trie.dir/sources
 
 build CMakeFiles/Task2Trie.dir/sources/entities/Student.cpp.o: CXX_COMPILER__Task2Trie_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/entities/Student.cpp || cmake_object_order_depends_target_Task2Trie
   DEP_FILE = CMakeFiles/Task2Trie.dir/sources/entities/Student.cpp.o.d
   FLAGS = -g -std=gnu++14
+  INCLUDES = -I"/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/headers"
   OBJECT_DIR = CMakeFiles/Task2Trie.dir
   OBJECT_FILE_DIR = CMakeFiles/Task2Trie.dir/sources/entities
 
-build CMakeFiles/Task2Trie.dir/sources/data_structures/BinarySearchTree.cpp.o: CXX_COMPILER__Task2Trie_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/BinarySearchTree.cpp || cmake_object_order_depends_target_Task2Trie
-  DEP_FILE = CMakeFiles/Task2Trie.dir/sources/data_structures/BinarySearchTree.cpp.o.d
+build CMakeFiles/Task2Trie.dir/sources/data_structures/AVLBinarySearchTree.cpp.o: CXX_COMPILER__Task2Trie_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/AVLBinarySearchTree.cpp || cmake_object_order_depends_target_Task2Trie
+  DEP_FILE = CMakeFiles/Task2Trie.dir/sources/data_structures/AVLBinarySearchTree.cpp.o.d
   FLAGS = -g -std=gnu++14
+  INCLUDES = -I"/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/headers"
   OBJECT_DIR = CMakeFiles/Task2Trie.dir
   OBJECT_FILE_DIR = CMakeFiles/Task2Trie.dir/sources/data_structures
 
 build CMakeFiles/Task2Trie.dir/sources/data_structures/ArrayTrie.cpp.o: CXX_COMPILER__Task2Trie_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/ArrayTrie.cpp || cmake_object_order_depends_target_Task2Trie
   DEP_FILE = CMakeFiles/Task2Trie.dir/sources/data_structures/ArrayTrie.cpp.o.d
   FLAGS = -g -std=gnu++14
+  INCLUDES = -I"/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/headers"
   OBJECT_DIR = CMakeFiles/Task2Trie.dir
   OBJECT_FILE_DIR = CMakeFiles/Task2Trie.dir/sources/data_structures
 
 build CMakeFiles/Task2Trie.dir/sources/data_structures/MapTrie.cpp.o: CXX_COMPILER__Task2Trie_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/data_structures/MapTrie.cpp || cmake_object_order_depends_target_Task2Trie
   DEP_FILE = CMakeFiles/Task2Trie.dir/sources/data_structures/MapTrie.cpp.o.d
   FLAGS = -g -std=gnu++14
+  INCLUDES = -I"/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/headers"
   OBJECT_DIR = CMakeFiles/Task2Trie.dir
   OBJECT_FILE_DIR = CMakeFiles/Task2Trie.dir/sources/data_structures
 
@@ -144,7 +154,7 @@ build CMakeFiles/Task2Trie.dir/sources/data_structures/MapTrie.cpp.o: CXX_COMPIL
 #############################################
 # Link the executable Task2Trie.exe
 
-build Task2Trie.exe: CXX_EXECUTABLE_LINKER__Task2Trie_Debug CMakeFiles/Task2Trie.dir/sources/Task2Trie.cpp.o CMakeFiles/Task2Trie.dir/sources/entities/Student.cpp.o CMakeFiles/Task2Trie.dir/sources/data_structures/BinarySearchTree.cpp.o CMakeFiles/Task2Trie.dir/sources/data_structures/ArrayTrie.cpp.o CMakeFiles/Task2Trie.dir/sources/data_structures/MapTrie.cpp.o
+build Task2Trie.exe: CXX_EXECUTABLE_LINKER__Task2Trie_Debug CMakeFiles/Task2Trie.dir/sources/Task2Trie.cpp.o CMakeFiles/Task2Trie.dir/sources/entities/Student.cpp.o CMakeFiles/Task2Trie.dir/sources/data_structures/AVLBinarySearchTree.cpp.o CMakeFiles/Task2Trie.dir/sources/data_structures/ArrayTrie.cpp.o CMakeFiles/Task2Trie.dir/sources/data_structures/MapTrie.cpp.o
   FLAGS = -g
   LINK_FLAGS = -Wl,--enable-auto-import
   OBJECT_DIR = CMakeFiles/Task2Trie.dir
@@ -166,6 +176,7 @@ build cmake_object_order_depends_target_Task3SameTree: phony || CMakeFiles/Task3
 build CMakeFiles/Task3SameTree.dir/sources/Task3SameTree.cpp.o: CXX_COMPILER__Task3SameTree_Debug /cygdrive/c/Users/Dima/Desktop/1$ курс$ II/АСД/Лабораторні$ роботи/Lab4/sources/Task3SameTree.cpp || cmake_object_order_depends_target_Task3SameTree
   DEP_FILE = CMakeFiles/Task3SameTree.dir/sources/Task3SameTree.cpp.o.d
   FLAGS = -g -std=gnu++14
+  INCLUDES = -I"/cygdrive/c/Users/Dima/Desktop/1 курс II/АСД/Лабораторні роботи/Lab4/headers"
   OBJECT_DIR = CMakeFiles/Task3SameTree.dir
   OBJECT_FILE_DIR = CMakeFiles/Task3SameTree.dir/sources
 
