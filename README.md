@@ -5,3 +5,4 @@ Implemented :bulb:
 * BST using AVL balancing
 * Tries on map and array
 * Comparing tries algorithm
+* Counting sort
