@@ -6,6 +6,7 @@
 #include <cmath>
 
 #include "data_structures/AVLBinarySearchTree.h"
+#include "data_structures/RedBlackTree.h"
 
 #define MIN_DIGITS_AMOUNT 11
 #define MAX_DIGITS_AMOUNT 15
@@ -137,7 +138,7 @@ int main() {
 
     testBinarySearchTree();
 
-//    AVLBinarySearchTree bst;
+//    RedBlackTree bst;
 //
 //    for (int i = 0; i < 20; i++) {
 //        bst.insert(Student());

@@ -39,6 +39,13 @@ void AVLBinarySearchTree::insert(const Student &student) {
     root = insertImpl(root, student);
 }
 
+
+AVLBinarySearchTree::~AVLBinarySearchTree() {
+    destroyNode(root);
+}
+
+
+
 Node *AVLBinarySearchTree::insertImpl(Node *node, const Student &student) {
     if (node == nullptr) {
         node = new Node(student);
@@ -192,7 +199,8 @@ int AVLBinarySearchTree::findInRange(const Student &minStudent, const Student &m
 
     int size = sizeImpl(middleTree);
 
-    mergeTrees(root, leftTree, rightTree);
+    mergeTrees(root, leftTree, middleTree);
+    mergeTrees(root, root, rightTree);
 
     return size;
 }
@@ -309,4 +317,12 @@ int AVLBinarySearchTree::getBalanceFactor(Node *node) {
     }
 
     return heightImpl(node->getLeft()) - heightImpl(node->getRight());
+}
+
+void AVLBinarySearchTree::destroyNode(Node *node) {
+    if (node != nullptr) {
+        destroyNode(node->getLeft());
+        destroyNode(node->getRight());
+        delete node;
+    }
 }

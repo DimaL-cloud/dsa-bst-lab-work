@@ -39,6 +39,8 @@ private:
     Node *root = nullptr;
 
 public:
+    virtual ~AVLBinarySearchTree();
+
     void insert(const Student &student);
 
     bool find(const Student &student);
@@ -64,6 +66,8 @@ public:
     int size();
 
 private:
+    void destroyNode(Node *node);
+
     Node *insertImpl(Node *node, const Student &student);
 
     bool findImpl(Node *node, const Student &student);
