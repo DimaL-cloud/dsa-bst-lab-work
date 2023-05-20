@@ -326,3 +326,20 @@ void AVLBinarySearchTree::destroyNode(Node *node) {
         delete node;
     }
 }
+
+void AVLBinarySearchTree::eraseRange(const Student &minStudent, const Student &maxStudent) {
+    eraseRangeImpl(root, minStudent, maxStudent);
+}
+
+void AVLBinarySearchTree::eraseRangeImpl(Node *&, const Student &minStudent, const Student &maxStudent) {
+    Node *leftTree;
+    Node *middleTree;
+    Node *rightTree;
+
+    splitTree(root, minStudent, leftTree, middleTree);
+    splitTree(middleTree, maxStudent, middleTree, rightTree);
+
+    mergeTrees(root, leftTree, rightTree);
+
+    destroyNode(middleTree);
+}

@@ -88,6 +88,8 @@ private:
 
     void mergeTrees(Node *&node, Node *leftNode, Node *rightNode);
 
+    void eraseRangeImpl(Node *&node, const Student &minStudent, const Student &maxStudent);
+
     int max(int firstNumber, int secondNumber) const;
 
     Node *rotateRight(Node *node);
